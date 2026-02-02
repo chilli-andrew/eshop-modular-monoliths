@@ -10,6 +10,10 @@ builder.Services.AddCatalogModule(builder.Configuration)
 
 var app = builder.Build();
 
+// app.UseCatalogModule()
+//     .UseBasketModule()
+//     .UseOrderingModule();
+
 app.Run();
 
 

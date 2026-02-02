@@ -10,4 +10,5 @@ public static class CatalogModule
         // will add dependencies
         return services;
     }
+
 }
