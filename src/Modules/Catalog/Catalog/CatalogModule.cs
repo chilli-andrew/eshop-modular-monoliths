@@ -1,5 +1,4 @@
-﻿using Catalog.Data;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,6 +15,9 @@ public static class CatalogModule
         // Application usecase services
         
         // Data - infrastructure services
+        var connectionString = configuration.GetConnectionString("Database");
+        services.AddDbContext<CatalogDbContext>(options =>
+            options.UseNpgsql(connectionString));
         
         return services;
     }
